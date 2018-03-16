@@ -1,0 +1,7 @@
+name: detect_language
+version: 0.1.0
+
+authors:
+  - Laurynas Butkus <laurynas.butkus@gmail.com>
+
+license: MIT
