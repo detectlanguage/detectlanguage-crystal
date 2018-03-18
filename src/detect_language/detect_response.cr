@@ -24,5 +24,9 @@ module DetectLanguage
       isReliable: Bool,
       confidence: Float64,
     })
+
+    def is_reliable?
+      isReliable
+    end
   end
 end
