@@ -3,19 +3,20 @@ require "json"
 
 module DetectLanguage
   class Client
-    property :configuration
+    @headers : HTTP::Headers | Nil
+    property configuration : Configuration
 
     def initialize(configuration)
       @configuration = configuration
     end
 
     def post(method, params)
-      response = http_client.post_form(request_uri(method), request_params(params), headers)
-      parse_response(response)      
+      response = http_client.post(path: request_uri(method), headers: headers, form: request_params(params))
+      parse_response(response)
     end
 
     private def request_params(params)
-      params.merge({ "key" => configuration.api_key })
+      params.merge({"key" => configuration.api_key})
     end
 
     private def headers
@@ -25,17 +26,17 @@ module DetectLanguage
     private def build_headers
       headers = HTTP::Headers.new
       headers.add("User-Agent", configuration.user_agent)
-      headers
+      return headers
     end
 
     private def parse_response(response)
       result = DetectResponse.from_json(response.body)
-      
+
       if result.error
-        error = result.error as ErrorData
-        raise Error.new(error.message)
-      end  
-            
+        error = result.error.not_nil!
+        raise error.message
+      end
+
       result
     end
 

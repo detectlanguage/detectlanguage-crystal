@@ -4,12 +4,13 @@ Detect Language API Crystal Client
 
 ## Installation
 
-Add it to `Projectfile`
+Add it to `shard.yml`
 
 ```crystal
-deps do
-  github "detectlanguage/detectlanguage-crystal", name: "detect_language"
-end
+dependencies:
+  detect_language:
+    github: detectlanguage/detectlanguage-crystal
+    branch: master
 ```
 
 ## Usage

@@ -21,8 +21,8 @@ module DetectLanguage
   end
 
   def detect(data : String)
-    result = client.post(:detect, { "q" => data })
-    data = result.data as DetectData
+    result = client.post(:detect, {"q" => data})
+    data = result.data.not_nil!
     data.detections
   end
 end
