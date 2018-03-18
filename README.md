@@ -1,6 +1,7 @@
 # detect_language
 
 [![Build Status](https://travis-ci.org/detectlanguage/detectlanguage-crystal.svg?branch=master)](https://travis-ci.org/detectlanguage/detectlanguage-crystal)
+[![GitHub release](https://img.shields.io/github/release/detectlanguage/detectlanguage-crystal.svg)](https://github.com/detectlanguage/detectlanguage-crystal/releases)
 
 Detect Language API Crystal Client
 
