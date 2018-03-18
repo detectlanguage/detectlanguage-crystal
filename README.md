@@ -1,5 +1,7 @@
 # detect_language
 
+[![Build Status](https://travis-ci.org/detectlanguage/detectlanguage-crystal.svg?branch=master)](https://travis-ci.org/detectlanguage/detectlanguage-crystal)
+
 Detect Language API Crystal Client
 
 ## Installation
