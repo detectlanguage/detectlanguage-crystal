@@ -11,12 +11,8 @@ module DetectLanguage
     end
 
     def post(method, params)
-      response = http_client.post(path: request_uri(method), headers: headers, form: request_params(params))
+      response = http_client.post(path: request_uri(method), headers: headers, form: params)
       parse_response(response)
-    end
-
-    private def request_params(params)
-      params.merge({"key" => configuration.api_key})
     end
 
     private def headers
@@ -26,6 +22,7 @@ module DetectLanguage
     private def build_headers
       headers = HTTP::Headers.new
       headers.add("User-Agent", configuration.user_agent)
+      headers.add("Authorization", "Bearer " + configuration.api_key)
       return headers
     end
 
