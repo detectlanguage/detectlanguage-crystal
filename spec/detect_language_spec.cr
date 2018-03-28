@@ -3,7 +3,6 @@ require "./spec_helper"
 describe DetectLanguage do
   it "configures" do
     configured do
-      DetectLanguage.configuration.api_key.should eq(API_KEY)
       DetectLanguage.configuration.host.should eq("ws.detectlanguage.com")
       DetectLanguage.configuration.user_agent.should contain("Detect Language API Crystal Client")
       DetectLanguage.configuration.user_agent.should contain(DetectLanguage::VERSION)
