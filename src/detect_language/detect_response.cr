@@ -1,29 +1,29 @@
 module DetectLanguage
   class DetectResponse
-    JSON.mapping({
-      data:  {type: DetectData, nilable: true},
-      error: {type: ErrorData, nilable: true},
-    })
+    include JSON::Serializable
+
+    property data : DetectData?
+    property error : ErrorData?
   end
 
   class ErrorData
-    JSON.mapping({
-      message: String,
-    })
+    include JSON::Serializable
+
+    property message : String
   end
 
   class DetectData
-    JSON.mapping({
-      detections: Array(Detection),
-    })
+    include JSON::Serializable
+
+    property detections : Array(Detection)
   end
 
   class Detection
-    JSON.mapping({
-      language:   String,
-      isReliable: Bool,
-      confidence: Float64,
-    })
+    include JSON::Serializable
+
+    property language : String
+    property isReliable : Bool
+    property confidence : Float64
 
     def is_reliable?
       isReliable
