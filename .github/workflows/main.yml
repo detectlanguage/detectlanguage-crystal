@@ -1,0 +1,20 @@
+name: Build
+on: [push,pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        crystal-version:
+          - '0.35.1'
+          - 'latest'
+    name: Crtstal ${{ matrix.crystal-version }} sample
+    steps:
+      - uses: actions/checkout@v3
+      - uses: crystal-lang/install-crystal@v1
+        with:
+          crystal: ${{ matrix.crystal-version }}
+      - env:
+          DETECTLANGUAGE_API_KEY: ${{ secrets.DETECTLANGUAGE_API_KEY }}
+        run: crystal spec
+      - run: crystal tool format --check
