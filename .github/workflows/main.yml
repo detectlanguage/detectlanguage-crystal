@@ -6,9 +6,8 @@ jobs:
     strategy:
       matrix:
         crystal-version:
-          - '0.35.1'
-          - 'latest'
-    name: Crtstal ${{ matrix.crystal-version }} sample
+          - '1.4.1'
+    name: Crystal ${{ matrix.crystal-version }} sample
     steps:
       - uses: actions/checkout@v3
       - uses: crystal-lang/install-crystal@v1
