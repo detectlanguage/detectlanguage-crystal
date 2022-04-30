@@ -1,7 +1,7 @@
 # Detect Language API Crystal Client
 
 [![GitHub release](https://img.shields.io/github/release/detectlanguage/detectlanguage-crystal.svg)](https://github.com/detectlanguage/detectlanguage-crystal/releases)
-[![Build Status](https://travis-ci.org/detectlanguage/detectlanguage-crystal.svg?branch=master)](https://travis-ci.org/detectlanguage/detectlanguage-crystal)
+[![Build Status](https://github.com/detectlanguage/detectlanguage-crystal/actions/workflows/main.yml/badge.svg)](https://github.com/detectlanguage/detectlanguage-crystal/actions)
 
 ## Installation
 
